@@ -28,8 +28,8 @@ group :development, :test do
   gem 'web-console', '2.0.0.beta3'
   #   'spring',      '1.1.3'
   gem 'spring',      '1.1.3'
-  #   'rspec-rails', '2.13.1'
-  gem 'rspec-rails', '2.13.1'
+  #   'rspec-rails', '3.1.0'
+  gem 'rspec-rails', '3.1.0'
 
 end
 
@@ -41,10 +41,10 @@ group :test do
   gem 'mini_backtrace',     '0.1.3'
   #   'guard-minitest',     '2.3.1'
   gem 'guard-minitest',     '2.3.1'
-  #   'selenium-webdriver', '2.35.1'
-  gem 'selenium-webdriver', '2.35.1'
-  #   'capybara',           '2.1.0'
-  gem 'capybara',           '2.1.0'
+  #   'selenium-webdriver', '2.44.0'
+  gem 'selenium-webdriver', '2.44.0'
+  #   'capybara',           '2.4.4'
+  gem 'capybara',           '2.4.4'
 
 end
 
