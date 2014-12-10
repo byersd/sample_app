@@ -35,6 +35,12 @@ end
 
 group :test do
 
+  #   'minitest-reporters', '1.0.5'
+  gem 'minitest-reporters', '1.0.5'
+  #   'mini_backtrace',     '0.1.3'
+  gem 'mini_backtrace',     '0.1.3'
+  #   'guard-minitest',     '2.3.1'
+  gem 'guard-minitest',     '2.3.1'
   #   'selenium-webdriver', '2.35.1'
   gem 'selenium-webdriver', '2.35.1'
   #   'capybara',           '2.1.0'
