@@ -1,23 +1,14 @@
 require 'spec_helper'
 
-describe "Static pages" do
+describe "Static Pages requests" do
 
-  #describe "GET /static_pages" do
-  #  it "works! (now write some real specs)" do
-  #    get static_pages_index_path
-  #    response.status.should be(200)
-  #  end
-  #end
-
-  def setup
-    @base_title = "Ruby on Rails Tutorial Sample App"
-  end
+  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
 
   describe "Home page" do
 
     it "should have the title 'Home'" do
       visit '/static_pages/home'
-      expect(page).to have_title("#{@base_title} | Home")
+      expect(page).to have_title("#{base_title} | Home")
     end
 
     it "should have the content 'Home page'" do
@@ -31,7 +22,7 @@ describe "Static pages" do
 
     it "should have the title 'Help'" do
       visit '/static_pages/help'
-      expect(page).to have_title("#{@base_title} | Help")
+      expect(page).to have_title("#{base_title} | Help")
     end
 
     it "should have the content 'Help page'" do
@@ -45,7 +36,7 @@ describe "Static pages" do
 
     it "should have the title 'About'" do
       visit '/static_pages/about'
-      expect(page).to have_title("#{@base_title} | About")
+      expect(page).to have_title("#{base_title} | About")
     end
 
     it "should have the content 'About page'" do
