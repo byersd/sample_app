@@ -1,6 +1,6 @@
 class UsedCar
 
-  include ActiveModel::Validations
+  include ActiveModel::Model
 
   attr_accessor :car_num
   attr_accessor :car_ref
