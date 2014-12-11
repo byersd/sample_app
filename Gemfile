@@ -1,22 +1,24 @@
 
 source 'https://www.rubygems.org'
 
-#   'rails',        '4.2.0.rc2'
-gem 'rails',        '4.2.0.rc2'
-#   'sass-rails',   '5.0.0.beta1'
-gem 'sass-rails',   '5.0.0.beta1'
-#   'uglifier',     '2.5.3'
-gem 'uglifier',     '2.5.3'
-#   'coffee-rails', '4.1.0'
-gem 'coffee-rails', '4.1.0'
-#   'jquery-rails', '4.0.0.beta2'
-gem 'jquery-rails', '4.0.0.beta2'
-#   'turbolinks',   '2.3.0'
-gem 'turbolinks',   '2.3.0'
-#   'jbuilder',     '2.2.3'
-gem 'jbuilder',     '2.2.3'
-#   'sdoc',         '0.4.0', group: :doc
-gem 'sdoc',         '0.4.0', group: :doc
+#   'rails',          '4.2.0.rc2'
+gem 'rails',          '4.2.0.rc2'
+#   'bootstrap-sass', '3.2.0.0'
+gem 'bootstrap-sass', '3.2.0.0'
+#   'sass-rails',     '5.0.0.beta1'
+gem 'sass-rails',     '5.0.0.beta1'
+#   'uglifier',       '2.5.3'
+gem 'uglifier',       '2.5.3'
+#   'coffee-rails',   '4.1.0'
+gem 'coffee-rails',   '4.1.0'
+#   'jquery-rails',   '4.0.0.beta2'
+gem 'jquery-rails',   '4.0.0.beta2'
+#   'turbolinks',     '2.3.0'
+gem 'turbolinks',     '2.3.0'
+#   'jbuilder',       '2.2.3'
+gem 'jbuilder',       '2.2.3'
+#   'sdoc',           '0.4.0', group: :doc
+gem 'sdoc',           '0.4.0', group: :doc
 
 group :development, :test do
 

@@ -7,12 +7,12 @@ describe "Static Pages" do
   describe "Home page" do
 
     it "should have the title 'Home'" do
-      visit '/static_pages/home'
+      visit '/home'
       expect(page).to have_title("Home | #{base_title}")
     end
 
     it "should have the content 'Home page'" do
-      visit '/static_pages/home'
+      visit '/home'
       expect(page).to have_content('Home page')
     end
 
@@ -21,12 +21,12 @@ describe "Static Pages" do
   describe "Help page" do
 
     it "should have the title 'Help'" do
-      visit '/static_pages/help'
+      visit '/help'
       expect(page).to have_title("Help | #{base_title}")
     end
 
     it "should have the content 'Help page'" do
-      visit '/static_pages/help'
+      visit '/help'
       expect(page).to have_content('Help page')
     end
 
@@ -35,12 +35,12 @@ describe "Static Pages" do
   describe "About page" do
 
     it "should have the title 'About'" do
-      visit '/static_pages/about'
+      visit '/about'
       expect(page).to have_title("About | #{base_title}")
     end
 
     it "should have the content 'About page'" do
-      visit '/static_pages/about'
+      visit '/about'
       expect(page).to have_content('About page')
     end
 
