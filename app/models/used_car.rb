@@ -30,17 +30,17 @@ class UsedCar
 
   def image_urls
 
-    image_urls = []
+    urls = []
 
     osr = obfuscated_stock_reference
 
     SIZE_VALUES.each do |size|
       CAMERA_VALUES.each do |camera|
-        image_urls << BASE_IMAGE_URL % { :obfuscated_stock_reference => osr , :size => size , :camera => camera }
+        urls << BASE_IMAGE_URL % { :obfuscated_stock_reference => osr , :size => size , :camera => camera }
       end
     end
 
-    return image_urls
+    return urls
 
   end
 

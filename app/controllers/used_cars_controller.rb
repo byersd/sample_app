@@ -8,21 +8,11 @@ class UsedCarsController < ApplicationController
     @used_car = UsedCar.new(used_car_params)
 
     if @used_car.valid?
-      # flash[:success] = "success!"
-      # render 'show' / redirect_to show ...?
-      # flash[:success] = "success!"
-      # render 'show' / redirect_to show ...?
-      # flash[:success] = "success!"
-      # render 'show' / redirect_to show ...?
       flash.now[:success] = "success!"
       render 'index'
     else
       render 'index'
     end
-  end
-
-  def show
-    @used_car = UsedCar.new(used_car_params)
   end
 
 private

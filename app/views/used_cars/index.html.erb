@@ -22,4 +22,12 @@
 
   </div>
 
+  <% if @used_car && @used_car.valid? %>
+    <div class="center">
+      <% @used_car.image_urls.each do |image_url| %>
+        <p><%= image_tag(image_url) %></p>
+      <% end %>
+    </div>
+  <% end %>
+
 </div>
