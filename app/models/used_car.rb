@@ -28,7 +28,7 @@ class UsedCar
     @car_ref = attributes[:car_ref]
   end
 
-  def get_image_urls
+  def image_urls
 
     image_urls = []
 

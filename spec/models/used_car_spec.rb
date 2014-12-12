@@ -193,7 +193,7 @@ describe UsedCar do
     end
   end
 
-  # Tests for get_image_urls.
+  # Tests for image_urls.
 
   describe "when car_num is of length 7" do
     it "should have correct image urls" do
@@ -213,7 +213,7 @@ describe UsedCar do
       @used_car.car_num = " AB12 CDE "
       @used_car.car_ref = " ARNXY-U-34567 "
       should be_valid
-      expect(@used_car.get_image_urls).to eq(expected_image_urls)
+      expect(@used_car.image_urls).to eq(expected_image_urls)
     end
   end
 
@@ -235,7 +235,7 @@ describe UsedCar do
       @used_car.car_num = " AB12CDEF "
       @used_car.car_ref = " ARNXY-U-45678 "
       should be_valid
-      expect(@used_car.get_image_urls).to eq(expected_image_urls)
+      expect(@used_car.image_urls).to eq(expected_image_urls)
     end
   end
 
