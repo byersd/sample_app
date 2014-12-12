@@ -4,12 +4,8 @@ Rails.application.routes.draw do
 
   root "used_cars#index"
 
-  # get
-  get  "index"  => "used_cars#index"
-  # post
-  post "search" => "used_cars#search"
-  # get
-  get  "show"   => "used_cars#show"
+  get "index"  => "used_cars#index"
+  get "search" => "used_cars#search"
 
   # get "static_pages/home"
   # get "static_pages/help"
