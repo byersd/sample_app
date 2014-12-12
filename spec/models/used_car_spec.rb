@@ -195,6 +195,50 @@ describe UsedCar do
 
   # Tests for image_urls.
 
+  describe "when car_num is of length 5" do
+    it "should have correct image urls" do
+      expected_image_urls = [UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "350" , :camera => "f" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "350" , :camera => "r" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "350" , :camera => "i" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "350" , :camera => "4" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "350" , :camera => "5" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "350" , :camera => "6" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "800" , :camera => "f" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "800" , :camera => "r" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "800" , :camera => "i" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "800" , :camera => "4" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "800" , :camera => "5" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ACR2N1XBYA1" , :size => "800" , :camera => "6" }]
+
+      @used_car.car_num = " AB 12 C "
+      @used_car.car_ref = " ARNXY-U-12345 "
+      should be_valid
+      expect(@used_car.image_urls).to eq(expected_image_urls)
+    end
+  end
+
+  describe "when car_num is of length 6" do
+    it "should have correct image urls" do
+      expected_image_urls = [UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "350" , :camera => "f" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "350" , :camera => "r" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "350" , :camera => "i" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "350" , :camera => "4" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "350" , :camera => "5" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "350" , :camera => "6" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "800" , :camera => "f" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "800" , :camera => "r" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "800" , :camera => "i" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "800" , :camera => "4" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "800" , :camera => "5" },
+                             UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "ADRCN2X1YB-A2" , :size => "800" , :camera => "6" }]
+
+      @used_car.car_num = " AB 12 CD "
+      @used_car.car_ref = " ARNXY-U-23456 "
+      should be_valid
+      expect(@used_car.image_urls).to eq(expected_image_urls)
+    end
+  end
+
   describe "when car_num is of length 7" do
     it "should have correct image urls" do
       expected_image_urls = [UsedCar::BASE_IMAGE_URL % { :obfuscated_stock_reference => "AERDNCX2Y1-BUA3" , :size => "350" , :camera => "f" },
