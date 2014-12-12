@@ -76,23 +76,6 @@ p
 
 /* header */
 
-#logo
-{
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: white;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-  &:hover
-  {
-    color: white;
-    text-decoration: none;
-  }
-}
-
 /* footer */
 
 footer
@@ -107,20 +90,6 @@ footer
     &:hover
     {
       color: $gray-darker;
-    }
-  }
-  small
-  {
-    float: left;
-  }
-  ul
-  {
-    float: right;
-    list-style: none;
-    li
-    {
-      float: left;
-      margin-left: 15px;
     }
   }
 }
@@ -138,16 +107,6 @@ input, textarea, select, .uneditable-input
 input
 {
   height: auto !important;
-}
-
-#error_explanation
-{
-  color: red;
-  ul
-  {
-    color: red;
-    margin: 0 0 30px 0;
-  }
 }
 
 .field_with_errors

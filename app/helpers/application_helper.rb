@@ -1,6 +1,6 @@
 module ApplicationHelper
 
-  def full_title(page_title = '')
+  def full_title(page_title = "")
 
     base_title = "Arnold Clark Used Car Search"
 

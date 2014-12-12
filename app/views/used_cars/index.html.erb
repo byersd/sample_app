@@ -10,13 +10,13 @@
 
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :car_num %>
-      <%= f.text_field :car_num , class: "form-control" %>
+      <%= f.text_field :car_num , class: "form-control" , placeholder: t('activemodel.attributes.used_car.car_num') %>
 
-      <%= f.label :car_ref %>
-      <%= f.text_field :car_ref , class: "form-control" %>
+      <%= f.text_field :car_ref , class: "form-control" , placeholder: t('activemodel.attributes.used_car.car_ref') %>
 
-      <%= f.submit "Search" , class: "btn btn-primary" , :name => nil %>
+      <div class="col-md-offset-3 col-md-6 col-md-offset-3">
+      <%= f.submit "Search" , class: "btn btn-lg btn-primary" , :name => nil %>
+      </div>
 
     <% end %>
 
