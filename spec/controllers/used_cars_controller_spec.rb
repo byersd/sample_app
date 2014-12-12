@@ -2,11 +2,13 @@ require 'rails_helper'
 
 describe UsedCarsController do
 
+  subject { response }
+
   describe "Index controller action" do
 
     it "should respond with success" do
       get :index
-      expect(response).to be_success
+      should be_success
     end
 
   end
@@ -22,7 +24,7 @@ describe UsedCarsController do
     describe "when blank parameters provided" do
       it "should respond with success" do
         get :search , :used_car => { car_num: "" , car_ref: "" }
-        expect(response).to be_success
+        should be_success
         expect(controller.params[:used_car]).to_not be_nil
         expect(controller.params[:used_car][:car_num]).to eq("")
         expect(controller.params[:used_car][:car_ref]).to eq("")
@@ -32,7 +34,7 @@ describe UsedCarsController do
     describe "when invalid parameters provided" do
       it "should respond with success" do
         get :search , :used_car => { car_num: "ABC" , car_ref: "ABC" }
-        expect(response).to be_success
+        should be_success
         expect(controller.params[:used_car]).to_not be_nil
         expect(controller.params[:used_car][:car_num]).to eq("ABC")
         expect(controller.params[:used_car][:car_ref]).to eq("ABC")
@@ -42,7 +44,7 @@ describe UsedCarsController do
     describe "when invalid parameters provided" do
       it "should respond with success" do
         get :search , :used_car => { car_num: "DEF" , car_ref: "DEF" }
-        expect(response).to be_success
+        should be_success
         expect(controller.params[:used_car]).to_not be_nil
         expect(controller.params[:used_car][:car_num]).to eq("DEF")
         expect(controller.params[:used_car][:car_ref]).to eq("DEF")
@@ -52,7 +54,7 @@ describe UsedCarsController do
     describe "when valid parameters provided" do
       it "should respond with success" do
         get :search , :used_car => { car_num: "AB12 CDE" , car_ref: "ARNXY-U-34567" }
-        expect(response).to be_success
+        should be_success
         expect(controller.params[:used_car]).to_not be_nil
         expect(controller.params[:used_car][:car_num]).to eq("AB12 CDE")
         expect(controller.params[:used_car][:car_ref]).to eq("ARNXY-U-34567")
@@ -62,7 +64,7 @@ describe UsedCarsController do
     describe "when valid parameters provided" do
       it "should respond with success" do
         get :search , :used_car => { car_num: "AB12CDEF" , car_ref: "ARNXY-U-45678" }
-        expect(response).to be_success
+        should be_success
         expect(controller.params[:used_car]).to_not be_nil
         expect(controller.params[:used_car][:car_num]).to eq("AB12CDEF")
         expect(controller.params[:used_car][:car_ref]).to eq("ARNXY-U-45678")

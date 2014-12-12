@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Static Pages" do
 
-  let(:base_title) { "Ruby on Rails Tutorial Sample App" }
+  let(:base_title) { "Arnold Clark Used Car Search" }
 
   describe "Home page" do
 
