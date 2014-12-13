@@ -2,15 +2,13 @@ require 'rails_helper'
 
 describe "Used Cars" do
 
-  let(:base_title) { "Arnold Clark Used Car Lookup" }
-
   subject { page }
 
   describe "Index page" do
 
     before { visit index_path }
 
-    it { should have_title("Used Car Lookup | #{base_title}") }
+    it { should have_title(full_title("Used Car Lookup")) }
     it { should have_content("Used Car Lookup") }
     it { should have_field("Car Num") }
     it { should have_field("Car Ref") }
@@ -73,7 +71,7 @@ describe "Used Cars" do
 
     before { visit '/search?used_car[car_num]=&used_car[car_ref]=' }
 
-    it { should have_title("Used Car Lookup | #{base_title}") }
+    it { should have_title(full_title("Used Car Lookup")) }
     it { should have_content("Used Car Lookup") }
     it { should have_field("Car Num") }
     it { should have_field("Car Ref") }

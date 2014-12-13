@@ -2,14 +2,12 @@ require 'rails_helper'
 
 describe "Static Pages" do
 
-  let(:base_title) { "Arnold Clark Used Car Lookup" }
-
   describe "Home page" do
 
     before { visit home_path }
 
     it "should have the title 'Home'" do
-      expect(page).to have_title("Home | #{base_title}")
+      expect(page).to have_title(full_title("Home"))
     end
 
     it "should have the content 'Home page'" do
@@ -23,7 +21,7 @@ describe "Static Pages" do
     before { visit help_path }
 
     it "should have the title 'Help'" do
-      expect(page).to have_title("Help | #{base_title}")
+      expect(page).to have_title(full_title("Help"))
     end
 
     it "should have the content 'Help page'" do
@@ -37,7 +35,7 @@ describe "Static Pages" do
     before { visit about_path }
 
     it "should have the title 'About'" do
-      expect(page).to have_title("About | #{base_title}")
+      expect(page).to have_title(full_title("About"))
     end
 
     it "should have the content 'About page'" do
