@@ -18,7 +18,7 @@ class UsedCarsController < ApplicationController
 private
 
   def used_car_params
-    params.require(:used_car).permit(:car_num , :car_ref)
+    params.require(:used_car).permit(:registration , :stock_reference)
   end
 
 end

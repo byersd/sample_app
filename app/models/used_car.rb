@@ -2,30 +2,30 @@ class UsedCar
 
   include ActiveModel::Model
 
-  attr_accessor :car_num
-  attr_accessor :car_ref
+  attr_accessor :registration
+  attr_accessor :stock_reference
 
   BASE_IMAGE_URL = "http://vcache.arnoldclark.com/imageserver/%{obfuscated_stock_reference}/%{size}/%{camera}"
 
-  MIN_CAR_NUM_LENGTH = 5
-  MIN_CAR_REF_LENGTH = 10
-  MAX_CAR_NUM_LENGTH = 10
-  MAX_CAR_REF_LENGTH = 20
-  VALID_CAR_NUM_REGEX  = /\A[A-Za-z0-9\s\-]*\z/
-  VALID_CAR_REF_REGEX  = /\A[A-Za-z0-9\s\-]*\z/
+  MIN_REGISTRATION_LENGTH = 5
+  MIN_STOCK_REFERENCE_LENGTH = 10
+  MAX_REGISTRATION_LENGTH = 10
+  MAX_STOCK_REFERENCE_LENGTH = 20
+  VALID_REGISTRATION_REGEX  = /\A[A-Za-z0-9\s\-]*\z/
+  VALID_STOCK_REFERENCE_REGEX  = /\A[A-Za-z0-9\s\-]*\z/
 
-  validates :car_num,
+  validates :registration,
     presence: true,
-    length: { minimum: MIN_CAR_NUM_LENGTH , maximum: MAX_CAR_NUM_LENGTH },
-    format: { with: VALID_CAR_NUM_REGEX }
-  validates :car_ref,
+    length: { minimum: MIN_REGISTRATION_LENGTH , maximum: MAX_REGISTRATION_LENGTH },
+    format: { with: VALID_REGISTRATION_REGEX }
+  validates :stock_reference,
     presence: true,
-    length: { minimum: MIN_CAR_REF_LENGTH , maximum: MAX_CAR_REF_LENGTH },
-    format: { with: VALID_CAR_REF_REGEX }
+    length: { minimum: MIN_STOCK_REFERENCE_LENGTH , maximum: MAX_STOCK_REFERENCE_LENGTH },
+    format: { with: VALID_STOCK_REFERENCE_REGEX }
 
   def initialize(attributes = {})
-    @car_num = attributes[:car_num]
-    @car_ref = attributes[:car_ref]
+    @registration = attributes[:registration]
+    @stock_reference = attributes[:stock_reference]
   end
 
   def image_urls
@@ -58,20 +58,20 @@ private
 
   def obfuscated_stock_reference
 
-    # remove all whitespace from @car_num.
-    stripped_car_num = @car_num.gsub(/\s+/ , "")
+    # remove all whitespace from @registration.
+    stripped_registration = @registration.gsub(/\s+/ , "")
 
-    # remove all whitespace from @car_ref.
-    stripped_car_ref = @car_ref.gsub(/\s+/ , "")
+    # remove all whitespace from @stock_reference.
+    stripped_stock_reference = @stock_reference.gsub(/\s+/ , "")
 
-    # take .reverse of stripped_car_num, and convert to char array.
-    char_array_car_num = stripped_car_num.reverse.split("")
+    # take .reverse of stripped_registration, and convert to char array.
+    char_array_registration = stripped_registration.reverse.split("")
 
-    # take [0 ... stripped_car_num.length] of stripped_car_ref, and convert to char array.
-    char_array_car_ref = stripped_car_ref[0 ... stripped_car_num.length].split("")
+    # take [0 ... stripped_registration.length] of stripped_stock_reference, and convert to char array.
+    char_array_stock_reference = stripped_stock_reference[0 ... stripped_registration.length].split("")
 
-    # interleave char arrays, flatten resulting 2D array to 1D array, combine elements to form string, append char from stripped_car_ref, and convert to uppercase.
-    char_array_car_ref.zip(char_array_car_num).flatten.join.concat(stripped_car_ref[8]).upcase
+    # interleave char arrays, flatten resulting 2D array to 1D array, combine elements to form string, append char from stripped_stock_reference, and convert to uppercase.
+    char_array_stock_reference.zip(char_array_registration).flatten.join.concat(stripped_stock_reference[8]).upcase
 
   end
 

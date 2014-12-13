@@ -23,5 +23,5 @@ en:
   activemodel:
     attributes:
       used_car:
-        car_num: "Car Num"
-        car_ref: "Car Ref"
+        registration: "Registration"
+        stock_reference: "Stock Reference"
