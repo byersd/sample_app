@@ -10,11 +10,9 @@ describe "Used Cars" do
 
     before { visit index_path }
 
-    it { should have_title("Search | #{base_title}") }
-    it { should have_content("Search") }
-    it { should have_content("Car Num") }
+    it { should have_title("Used Car Lookup | #{base_title}") }
+    it { should have_content("Used Car Lookup") }
     it { should have_field("Car Num") }
-    it { should have_content("Car Ref") }
     it { should have_field("Car Ref") }
     it { should have_selector("input[type='submit'][value='Search']") }
     it { should have_link("Arnold Clark", href: "http://www.arnoldclark.com/") }
@@ -59,7 +57,7 @@ describe "Used Cars" do
 
         expect(current_path).to start_with('/search')
 
-        should have_selector("div[class='alert alert-success']", text: "success")
+        should have_selector("div[class='alert alert-success']", text: "Success")
         expect(find_field("Car Num").value).to eq("AB12CDEF")
         expect(find_field("Car Ref").value).to eq("ARNXY-U-45678")
 
@@ -75,11 +73,9 @@ describe "Used Cars" do
 
     before { visit '/search?used_car[car_num]=&used_car[car_ref]=' }
 
-    it { should have_title("Search | #{base_title}") }
-    it { should have_content("Search") }
-    it { should have_content("Car Num") }
+    it { should have_title("Used Car Lookup | #{base_title}") }
+    it { should have_content("Used Car Lookup") }
     it { should have_field("Car Num") }
-    it { should have_content("Car Ref") }
     it { should have_field("Car Ref") }
     it { should have_selector("input[type='submit'][value='Search']") }
     it { should have_link("Arnold Clark", href: "http://www.arnoldclark.com/") }
@@ -112,7 +108,7 @@ describe "Used Cars" do
       it "should display images" do
         visit '/search?used_car[car_num]=AB12CDEF&used_car[car_ref]=ARNXY-U-45678'
 
-        should have_selector("div[class='alert alert-success']", text: "success")
+        should have_selector("div[class='alert alert-success']", text: "Success")
         expect(find_field("Car Num").value).to eq("AB12CDEF")
         expect(find_field("Car Ref").value).to eq("ARNXY-U-45678")
 

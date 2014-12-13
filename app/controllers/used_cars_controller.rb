@@ -8,7 +8,7 @@ class UsedCarsController < ApplicationController
     @used_car = UsedCar.new(used_car_params)
 
     if @used_car && @used_car.valid?
-      flash.now[:success] = "success!"
+      flash.now[:success] = "Success!"
       render 'index'
     else
       render 'index'

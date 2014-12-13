@@ -1,12 +1,19 @@
-<% provide(:title, "Search") %>
+<% provide(:title, "Used Car Lookup") %>
 
-<h1>Search</h1>
+<div class="center">
+  <h1>Used Car Lookup</h1>
+  <h2>Blah blah blah blah blah blah.</h2>
+</div>
 
 <div class="row">
 
   <div class="col-md-offset-3 col-md-6 col-md-offset-3">
 
     <%= form_for(@used_car , :method => :get , :url => search_path) do |f| %>
+
+      <% flash.each do |message_type , message| %>
+        <div class="alert alert-<%= message_type %>"><%= message %></div>
+      <% end %>
 
       <%= render 'shared/error_messages', object: f.object %>
 
