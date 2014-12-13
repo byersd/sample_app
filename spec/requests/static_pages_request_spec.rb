@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Static Pages" do
 
-  let(:base_title) { "Arnold Clark Used Car Search" }
+  let(:base_title) { "Arnold Clark Used Car Lookup" }
 
   describe "Home page" do
 

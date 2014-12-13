@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Used Cars" do
 
-  let(:base_title) { "Arnold Clark Used Car Search" }
+  let(:base_title) { "Arnold Clark Used Car Lookup" }
 
   subject { page }
 
